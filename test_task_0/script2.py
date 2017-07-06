@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-import csv
-import requests
-import sys
+import csv, requests, sys
 
 with open(sys.argv[1]) as inf, open('wikipedia_answers.csv', 'w') as ouf:
     reader = csv.reader(inf, delimiter="\t")
