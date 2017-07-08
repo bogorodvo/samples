@@ -9,7 +9,7 @@ with open(sys.argv[1]) as inf, open('wikipedia_answers.csv', 'w') as ouf:
     writer.writerow(["wikipedia_page", "website"])
     for row in reader:
         for line in requests.get(row[0]).text.split('</'):
-            if 'a rel="nofollow" class="external' in line and 'th>\n<td' in line:
+            if 'rel="nofollow" class="external' in line and 'th>\n<td' in line:
                 line = line[line.find('href="')+len('href="'):]
                 writer.writerow([row[0], line[:line.find('"')]])
                 break
