@@ -1,5 +1,5 @@
 '''
-Craft Data Eggineer Test Task
+Craft Data Engineer Intern Test Task
 Developed by Bogorod V.O.
 08-07-2017
 '''
