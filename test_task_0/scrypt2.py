@@ -22,7 +22,7 @@ class Task:
 
     def file_reading(self):
         with open(self.file_inf, 'r') as inf, open(self.file_ouf, 'w') as ouf:
-            reader = csv.reader(inf)
+            reader = csv.reader(inf, delimiter='\t')
             writer = csv.writer(ouf, quoting=csv.QUOTE_ALL)
             writer.writerow(self.head_ouf)
             for row in reader:
