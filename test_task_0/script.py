@@ -4,7 +4,7 @@ import requests
 import sys
 
 with open(sys.argv[1]) as inf, open('wikipedia_answers.csv', 'w') as ouf:
-    reader = csv.reader(inf, delimiter="\t")
+    reader = csv.reader(inf)
     writer = csv.writer(ouf, quoting=csv.QUOTE_ALL)
     writer.writerow(["wikipedia_page", "website"])
     for row in reader:
