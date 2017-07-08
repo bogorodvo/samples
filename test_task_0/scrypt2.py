@@ -6,7 +6,7 @@ import sys
 
 class Task:
     def __init__(self):
-        self.file_inf = 'wikipedia_links.csv'
+        self.file_inf = sys.argv[1]
         self.file_ouf = 'wikipedia_answers.csv'
         self.head_ouf = ["wikipedia_page", "website"]
         self.s_split = '</'
@@ -20,7 +20,7 @@ class Task:
                 line = line[line.find(self.s_start) + len(self.s_start):]
                 return line[:line.find(self.s_end)]
 
-    def file_readings(self):
+    def file_reading(self):
         with open(self.file_inf, 'r') as inf, open(self.file_ouf, 'w') as ouf:
             reader = csv.reader(inf)
             writer = csv.writer(ouf, quoting=csv.QUOTE_ALL)
@@ -28,4 +28,4 @@ class Task:
             for row in reader:
                 writer.writerow([row[0], self.content(row)])
 
-Task().file_readings()
+Task().file_reading()
